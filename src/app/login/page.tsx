@@ -3,14 +3,39 @@ import React from "react";
 import AuthForm from "@/components/AuthForm";
 import Link from "next/link";
 
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import { app } from "../../../firebase";
+
 const LoginPage = ()=>{
-    const handleLogin = (email: string, password: string, confirmPassword?: string)=>{
+  const router = useRouter();
+    const handleLogin = async (email: string, password: string, confirmPassword?: string)=>{
 
         // Implement login logic here
     console.log('Login attempt:', email, password);
 
      // Example: Add your authentication logic here
     // e.g., make an API call to authenticate the user
+
+    
+    try {
+      const credential = await signInWithEmailAndPassword( getAuth(app),
+      email,
+      password);
+
+      const idToken = await credential.user.getIdToken();
+
+      await fetch("api/login", {
+        method: "POST",
+        headers:{
+          Authorization: `Bearer ${idToken}`
+        }
+      })
+      router.push("/");
+    } catch (error) {
+      console.log(error)
+    }
+
 
     }
     return(

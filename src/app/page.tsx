@@ -2,7 +2,7 @@ import Image from "next/image";
 // import LoginPage from "./login/page";
 import { getTokens } from "next-firebase-auth-edge";
 import { cookies } from "next/headers";
-import { notFound } from "next/navigation";
+import { redirect } from 'next/navigation';
 
 import { clientConfig, serverConfig } from "../../config";
 
@@ -15,7 +15,7 @@ export default async function  Home() {
   })
 
   if(!tokens){
-    notFound()
+    redirect('/login');
   }
   return (
     <main>
