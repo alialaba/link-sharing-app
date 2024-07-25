@@ -20,19 +20,26 @@
 // export default DashboardPage;
 
 
-"use client";
-import React from "react";
-import LinkTab from "./links/page";
+// "use client";
+// import React from "react";
+// import LinkTab from "./links/page";
 
 
 
 
-const Dashboard = () => {
-  return (
-    <>
-      <h1>Not found</h1>
-    </>
-  );
-};
+// const Dashboard = () => {
+//   return (
+//     <>
+//       <h1>Not found</h1>
+//     </>
+//   );
+// };
 
-export default Dashboard;
+// export default Dashboard;
+
+// src/app/dashboard/page.tsx
+import { redirect } from 'next/navigation';
+
+export default function Dashboard() {
+  redirect('/dashboard/links');
+}
