@@ -6,7 +6,6 @@ import { redirect } from 'next/navigation';
 
 import { clientConfig, serverConfig } from "../../config";
 
-export const runtime = "edge";
 
 export default async function  Home() {
   const tokens = await getTokens(cookies(), {

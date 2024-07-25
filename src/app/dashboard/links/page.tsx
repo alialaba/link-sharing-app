@@ -3,7 +3,6 @@ import React from "react";
 import Image from "next/image";
 import { FaPlus } from "react-icons/fa";
 
-export const runtime = "edge";
 
 const LinkTab = ()=>{
     return(

@@ -25,7 +25,7 @@ import React from "react";
 import LinkTab from "./links/page";
 
 
-export const runtime = "edge";
+
 
 const Dashboard = () => {
   return (
