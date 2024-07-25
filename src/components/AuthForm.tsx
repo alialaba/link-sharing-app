@@ -88,7 +88,7 @@ const AuthForm = ({ isLogin, onSubmit }: AuthFormProps) => {
 
 
       <Button
-        className="w-full px-[27px] py-[11px] text-white bg-[#633CFF] rounded-md  hover:bg-[#BEADFF] hover:shadow-custom-shadow focus:outline-none focus:border-none"
+        className="w-full mx-auto text-center px-[27px] py-[11px] text-white bg-[#633CFF] rounded-md  hover:bg-[#BEADFF] hover:shadow-custom-shadow focus:outline-none focus:border-none"
         text={isLogin ? "Log In" : "Create Account"}
       />
     </form>

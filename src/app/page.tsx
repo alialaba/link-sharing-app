@@ -13,6 +13,7 @@ export default async function  Home() {
     cookieSignatureKeys: serverConfig.cookieSignatureKeys,
     serviceAccount: serverConfig.serviceAccount,
   })
+  console.log(tokens)
 
   if(!tokens){
     redirect('/login');
@@ -32,3 +33,4 @@ export default async function  Home() {
        
   );
 }
+''

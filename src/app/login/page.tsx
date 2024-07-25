@@ -2,6 +2,7 @@
 import React from "react";
 import AuthForm from "@/components/AuthForm";
 import Link from "next/link";
+import Image from "next/image";
 
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useRouter } from "next/navigation";
@@ -25,7 +26,7 @@ const LoginPage = ()=>{
 
       const idToken = await credential.user.getIdToken();
 
-      await fetch("api/login", {
+      await fetch("/login", {
         method: "POST",
         headers:{
           Authorization: `Bearer ${idToken}`
@@ -39,8 +40,13 @@ const LoginPage = ()=>{
 
     }
     return(
-        <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 lg:bg-white md:bg-white sm:bg-none lg:p-[40px] md:p-[40px]  rounded-[5px]">
+        <div className="min-h-screen flex flex-col items-center justify-center bg-[#FAFAFA] py-12 px-4 sm:px-6 lg:px-8">
+      <div>
+      <div>
+      <Image src="/logo.svg" alt="logo image" priority width={182} height={40} />
+      </div>
+      </div>
+      <div className="max-w-md w-full mt-7 space-y-8 lg:bg-white md:bg-white sm:bg-none lg:p-[40px] md:p-[40px]  rounded-[5px]">
         <div>
           <h2 className="mb-3 font-bold text-2xl  text-[#333333]">
             Login 

@@ -26,15 +26,17 @@ const CreateAccountPage = () => {
 
     try {
       await createUserWithEmailAndPassword(getAuth(app), email, password);
-      router.push("../login");
+      router.push("/login");
     } catch (e) {
       console.log(e, "error");
     }
   };
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      {/* <Image src="/public/logo.svg" alt="logo image" width={500} height={300} /> */}
-      <div className="max-w-md w-full space-y-8 lg:bg-white md:bg-white sm:bg-none lg:p-[40px] md:p-[40px]  rounded-[5px]">
+    <div className="min-h-screen flex  flex-col items-center justify-center bg-[#FAFAFA] py-12 px-4 sm:px-6 lg:px-8">
+      <div>
+      <Image src="/logo.svg" alt="logo image" priority width={182} height={40} />
+      </div>
+      <div className="max-w-md mt-7 w-full space-y-8 lg:bg-white md:bg-white sm:bg-none lg:p-[40px] md:p-[40px]  rounded-[12px]">
         <div>
           <h2 className="mb-3 font-bold text-2xl  text-[#333333]">
             Create account
